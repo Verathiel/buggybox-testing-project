@@ -20,3 +20,34 @@ Cílem projektu je ukázat schopnost identifikovat a automaticky testovat chyby 
 
    ```bash
    pip install flask
+Spusť aplikaci:
+
+bash
+Zkopírovat
+Upravit
+python app/app.py
+Otevři v prohlížeči:
+
+cpp
+Zkopírovat
+Upravit
+http://127.0.0.1:5000/
+Spuštění testů
+Spustíš příkazem:
+
+bash
+Zkopírovat
+Upravit
+python -m unittest discover -s tests
+Co projekt ukazuje
+Základní Flask aplikaci s formulářem
+
+Automatizované testy formuláře a API
+
+Detekci chyb v aplikaci
+
+GitHub Actions pro automatické spouštění testů (CI/CD)
+
+Kontakt
+Veronika Flachsová
+veronikaflachsova186@gmail.com
