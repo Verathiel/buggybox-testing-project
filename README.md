@@ -1,3 +1,4 @@
+![Tests](https://github.com/Verathiel/buggybox-testing-project/actions/workflows/tests.yml/badge.svg)
 # BuggyBox – projekt pro testování aplikace
 
 ## Popis
