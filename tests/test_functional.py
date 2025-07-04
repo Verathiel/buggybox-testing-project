@@ -13,7 +13,7 @@ class FormTestCase(unittest.TestCase):
             "age": "25"
         })
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Data byla odeslána", response.data)
+        self.assertIn("Data byla odeslána", response.get_data(as_text=True))
 
     def test_empty_name(self):
         response = self.client.post("/", data={
@@ -22,7 +22,7 @@ class FormTestCase(unittest.TestCase):
             "age": "25"
         })
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Data byla odeslána", response.data)  # TADY JE BUG: neměla by projít
+        self.assertIn("Data byla odeslána", response.get_data(as_text=True))  # BUG: nemělo by projít
 
     def test_invalid_email(self):
         response = self.client.post("/", data={
@@ -31,7 +31,7 @@ class FormTestCase(unittest.TestCase):
             "age": "25"
         })
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Data byla odeslána", response.data)  # TADY JE BUG: špatný email projde
+        self.assertIn("Data byla odeslána", response.get_data(as_text=True))  # BUG: špatný email projde
 
     def test_negative_age(self):
         response = self.client.post("/", data={
@@ -40,7 +40,7 @@ class FormTestCase(unittest.TestCase):
             "age": "-5"
         })
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Data byla odeslána", response.data)  # BUG: záporný věk projde
+        self.assertIn("Data byla odeslána", response.get_data(as_text=True))  # BUG: záporný věk projde
 
 if __name__ == "__main__":
     unittest.main()
