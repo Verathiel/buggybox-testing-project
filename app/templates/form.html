@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuggyBox Form</title>
+</head>
+<body>
+    <h1>Formulář</h1>
+    {% if success %}
+        <p style="color: green;">Data byla odeslána!</p>
+        <ul>
+            <li>Jméno: {{ name }}</li>
+            <li>Email: {{ email }}</li>
+            <li>Věk: {{ age }}</li>
+        </ul>
+    {% endif %}
+    <form method="post">
+        <label for="name">Jméno:</label>
+        <input type="text" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email"><br>
+
+        <label for="age">Věk:</label>
+        <input type="text" name="age"><br>
+
+        <button type="submit">Odeslat</button>
+    </form>
+</body>
+</html>
